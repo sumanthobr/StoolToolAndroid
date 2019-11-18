@@ -12,7 +12,7 @@ import java.util.Map;
 public class LaunchData {
     @DataProvider(name = "launchData")
     public Object[][] launchDetails() throws Exception {
-        String filePath="/Users/saritagidwani/IdeaProjects/AppTest/src/test/java/testData/LaunchData.xlsx";
+        String filePath="/Users/saritagidwani/IdeaProjects/AppTest/src/test/java/testData/data.xlsx";
         File file= new File(filePath);
         FileInputStream fis= new FileInputStream(file);
         XSSFWorkbook wb= new XSSFWorkbook(fis);
