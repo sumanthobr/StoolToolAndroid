@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite1" verbose="1"  >
+<!--<test name="Test on samsung" group-by-instances="true">-->
+<!--    <parameter name="udid" value="17119b50"/>-->
+<!--    <parameter name="systemPort" value="8200"/>-->
+<!--    <classes>-->
+<!--&lt;!&ndash;        <class name="SanityTests.LoginTest"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <class name="SanityTests.LaunchTest"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <class name="SanityTests.OfflineLoginTest"/>&ndash;&gt;-->
+<!--        <class name="SanityTests.InputTests"/>-->
+<!--    </classes>-->
+<!--</test>-->
+<!--<test name="Test on Moto C">-->
+<!--    <parameter name="udid" value="ZZ22227KPL"/>-->
+<!--    <parameter name="systemPort" value="8202"/>-->
+<!--    <classes>-->
+<!--        <class name="SanityTests.OfflineLoginTest"/>-->
+<!--        <class name="SanityTests.LaunchTest"/>-->
+<!--    </classes>-->
+    <test name="Test on Android 8.0">
+        <parameter name="udid" value="ZY3223QMKH"/>
+        <parameter name="systemPort" value="8200"/>
+        <classes>
+            <class name="SanityTests.InputTests"/>
+        </classes>
+    </test>
+</suite>
