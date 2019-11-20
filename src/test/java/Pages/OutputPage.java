@@ -38,6 +38,8 @@ public class OutputPage extends Base {
     @AndroidFindBy(id = "com.stooltool:id/unable_to_drink_accordion") List<MobileElement> vomitingDangerSign;
     @AndroidFindBy(id = "com.stooltool:id/blood_in_stool_accordion") List<MobileElement> bloodInStoolDangerSign;
     @AndroidFindBy(id = "com.stooltool:id/hypothermia_accordion") List<MobileElement> hypothermiaDangerSign;
+    @AndroidFindBy(id = "com.stooltool:id/first_sub_text") List<MobileElement> firstAntibiotic;
+    @AndroidFindBy(id = "com.stooltool:id/extra_text_box") List<MobileElement> extraAntibiotic;
     public String getHeaderTitle(){
         waitFor(outputHeader);
         return outputHeader.getText();
@@ -234,7 +236,9 @@ public class OutputPage extends Base {
             System.out.println("No bloodyStool");
             return true;
         }
-
+    }
+    public String getFirstAntibiotic(){
+        return scrollAndGetText(firstAntibiotic);
     }
     public void clickNewPatientButton(){
         scrollAndClick(newPatientButton);

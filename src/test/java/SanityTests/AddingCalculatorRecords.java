@@ -95,7 +95,7 @@ public class AddingCalculatorRecords extends Base {
         System.out.println(outputPage.getOutputAge());
         Assert.assertEquals(outputPage.getGender(),gender);
         System.out.println(inputPage.getWeight());
-        System.out.println(outputPage.getDehydrationStatus());
+        String dehydrationStatus=outputPage.getDehydrationStatus();
         Assert.assertEquals(outputPage.verifyFirstFluidType(outputPage.getDehydrationStatus()),mappings.getFluidType(outputPage.getDehydrationStatus()));
         System.out.println(outputPage.getFirstFluidVolume());
         Assert.assertEquals(outputPage.getFirstFluidDuration(),outputPage.verifyFirstFluidTime(outputPage.getDehydrationStatus()));
@@ -106,6 +106,7 @@ public class AddingCalculatorRecords extends Base {
         Assert.assertTrue(outputPage.verifyConvulsions(convulsions));
         Assert.assertTrue(outputPage.verifyFastBreathing(fastBreathing));
         Assert.assertTrue(outputPage.verifyBloodinStool(bloodyStool));
+        Assert.assertEquals(outputPage.getFirstAntibiotic(),mappings.verifyPrimaryAntibiotic(ageYear,dehydrationStatus,wateryStool,bloodyStool,INPUT_COUNTRY));
     }
     @AfterMethod
     public void done(){

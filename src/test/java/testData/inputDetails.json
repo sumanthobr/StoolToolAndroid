@@ -1,10 +1,10 @@
 {
   "InputData":[
     {
-      "ageYear": "12",
+      "ageYear": "65",
       "ageMonth": "2",
       "gender": "Female",
-      "isPregnant": "yes",
+      "isPregnant": "no",
       "wateryStool": "yes",
       "bloodyStool": "yes",
       "generalCondition": "Lethargic / Unconscious",

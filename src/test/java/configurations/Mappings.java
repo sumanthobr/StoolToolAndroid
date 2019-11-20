@@ -2,6 +2,8 @@ package configurations;
 
 import java.util.HashMap;
 
+import static Constants.Constants.*;
+
 public class Mappings {
     public static HashMap<String,String > wateryAntibiotics(){
         HashMap<String,String> an= new HashMap<String, String>();
@@ -46,5 +48,65 @@ public class Mappings {
     public static String getFluidType(String status){
         String fluidType= fluidType().get(status);
         return fluidType.split(":")[1];
+    }
+    public static String verifyPrimaryAntibiotic(String age,String dehydrationStatus,String watery,String bloody,String country){
+        String antibiotic="";
+        switch (country){
+            case BANGLADESH:
+                switch(bloody){
+                    case "yes":
+                        System.out.println("Bloody cases........");
+                        antibiotic+=getFirstAntibiotic(age, dehydrationStatus, bloody, watery);
+                        break;
+                    case "no":
+                        System.out.println("Watery cases........");
+                        antibiotic+= getFirstAntibiotic(age, dehydrationStatus, bloody, watery);
+                        break;
+                }
+            case HAITI:
+                switch (dehydrationStatus){
+                    case SEVERE:
+                    case SOME:
+                    case No:
+                }
+            case OTHER:
+                switch (dehydrationStatus){
+                    case SEVERE:
+                    case SOME:
+                    case No:
+                }
+        }
+     return antibiotic;
+    }
+    public static String getFirstAntibiotic(String age,String dehydrationStatus,String bloody,String watery){
+        String antibiotic="";
+        switch (dehydrationStatus){
+            case SEVERE:
+                if(watery.equalsIgnoreCase("yes") && bloody.equalsIgnoreCase("no")){
+                    antibiotic= antibiotic+"Azithromycin";
+                }
+                else if((watery.equalsIgnoreCase("yes") || watery.equalsIgnoreCase("no"))&& bloody.equalsIgnoreCase("yes")){
+                    System.out.println("Bloody case");
+                    if(Integer.parseInt(age)>64){
+                        antibiotic= antibiotic+"Ciprofloxacin";
+                    }
+                    else {
+                        antibiotic= antibiotic+"Azithromycin";
+                    }
+                }
+                break;
+            case SOME:
+                if(watery.equalsIgnoreCase("yes") && bloody.equalsIgnoreCase("no") && Integer.parseInt(age)<2){
+                    antibiotic= antibiotic+"Azithromycin";
+                }
+                else{
+                    antibiotic= antibiotic+"None";
+                }
+                break;
+            case No:
+                antibiotic=antibiotic+"None";
+                break;
+        }
+        return antibiotic;
     }
 }

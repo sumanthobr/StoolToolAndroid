@@ -226,7 +226,7 @@ public class InputPage extends Base {
         }
     }
     public boolean pregnantPossibly(){
-        if(Integer.parseInt(getAgeEntered())>11){
+        if(Integer.parseInt(getAgeEntered())>11 && Integer.parseInt(getAgeEntered())<50){
             return getPregnancyHeader();
         }
         else{
@@ -235,7 +235,7 @@ public class InputPage extends Base {
         }
     }
     public boolean adjustWeightForPregnancy(String isPregnant){
-        if(isPregnant.equalsIgnoreCase("yes")&& Integer.parseInt(getAgeEntered())>11){
+        if(isPregnant.equalsIgnoreCase("yes") && Integer.parseInt(getAgeEntered())>11 && Integer.parseInt(getAgeEntered())<50){
             waitFor(weightForPregnancyText);
             return weightForPregnancyText.isDisplayed();
         }
@@ -246,7 +246,7 @@ public class InputPage extends Base {
     }
     public void setPregnancy(String ageYear,String gender,String isPregnant){
         int age= Integer.parseInt(ageYear);
-        if(age>=12 && gender.equalsIgnoreCase("female")){
+        if(age>=12 && age<50 && gender.equalsIgnoreCase("female")){
             if(isPregnant.equalsIgnoreCase("yes")){
                 pregnancyYesBtn.click();
             }
@@ -259,10 +259,10 @@ public class InputPage extends Base {
         }
     }
     public void setPregnant(String b){
-        if(Integer.parseInt(getAgeEntered())>11 && b.equalsIgnoreCase("yes")){
+        if(Integer.parseInt(getAgeEntered())>11 && Integer.parseInt(getAgeEntered())<50 && b.equalsIgnoreCase("yes")){
             pregnancyYesBtn.click();
         }
-        else if(Integer.parseInt(getAgeEntered())>11 && b.equalsIgnoreCase("no")){
+        else if(Integer.parseInt(getAgeEntered())>11 && Integer.parseInt(getAgeEntered())<50 && b.equalsIgnoreCase("no")){
             pregnancyNoBtn.click();
         }
         else {
