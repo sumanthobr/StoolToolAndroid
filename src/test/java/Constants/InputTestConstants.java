@@ -1,10 +1,11 @@
 package Constants;
 
 public interface InputTestConstants {
-    static String LANGUAGE="english";//Is constant always
-    static String CALCULATOR_ONLY="Rehydration calculator (only)";
-    static String MANUTRITION_ON="Yes: Requires experienced staff";
-    static String ESTIMATED_TEXT="Estimated";
-    static String OUTPUT_HEADER="Output";
+    String LANGUAGE="english";//Is constant always
+    String CALCULATOR_ONLY="Rehydration calculator (only)";
+    String MANUTRITION_ON="Yes: Requires experienced staff";
+    String ESTIMATED_TEXT="Estimated";
+    String OUTPUT_HEADER="Output";
+    String INPUT_COUNTRY="Haiti";
 
 }

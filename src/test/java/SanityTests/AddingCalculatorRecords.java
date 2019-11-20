@@ -3,6 +3,7 @@ package SanityTests;
 
 import Pages.InputPage;
 import Pages.LaunchPage;
+import Pages.OutputPage;
 import Pages.SettingsPage;
 import configurations.Base;
 import configurations.CustomTestListener;
@@ -15,13 +16,15 @@ import java.net.MalformedURLException;
 
 import static Constants.Constants.*;
 import static Constants.InputTestConstants.*;
+import static Constants.InputTestConstants.INPUT_COUNTRY;
 
 @Listeners(CustomTestListener.class)
-public class InputTests extends Base {
+public class AddingCalculatorRecords extends Base {
     Mappings mappings;
     LaunchPage launchPage;
     SettingsPage settingsPage;
     InputPage inputPage;
+    OutputPage outputPage;
     @Parameters({"udid","systemPort"})
     @BeforeTest(alwaysRun = true)
     public void setup(String par1,String par2) throws MalformedURLException, InterruptedException {
@@ -35,7 +38,7 @@ public class InputTests extends Base {
         launchPage.clickConfirm();
         launchPage.acceptTerms();
         Assert.assertEquals(launchPage.getPopupHeader(),COUNTRY_HEADER);
-        launchPage.setCountry(COUNTRY);
+        launchPage.setCountry(INPUT_COUNTRY);
         Assert.assertEquals(launchPage.getPopupHeader(),DISEASE_HEADER);
         launchPage.proceed();
         Assert.assertEquals(launchPage.getPopupHeader(),PURPOSE_HEADER);
@@ -43,9 +46,9 @@ public class InputTests extends Base {
         Assert.assertTrue(launchPage.getSelectedOption(CALCULATOR_ONLY));
         launchPage.proceed();
         Assert.assertEquals(launchPage.getPopupHeader(),WATERY_DIARRHOEA_HEADER);
-        Assert.assertTrue(launchPage.getSelectedOption(mappings.getWateryAntibiotic(COUNTRY)));
+        Assert.assertTrue(launchPage.getSelectedOption(mappings.getWateryAntibiotic(INPUT_COUNTRY)));
         launchPage.proceed();
-        Assert.assertTrue(launchPage.getSelectedOption(mappings.getBloodyAntibiotic(COUNTRY)));
+        Assert.assertTrue(launchPage.getSelectedOption(mappings.getBloodyAntibiotic(INPUT_COUNTRY)));
         launchPage.proceed();
         Assert.assertEquals(launchPage.getPopupHeader(),MALNUTRITION_HEADER);
         launchPage.proceed();
@@ -57,6 +60,7 @@ public class InputTests extends Base {
                       String generalCondition, String eyes, String thirst, String skinPinch, String isAllergic, String allergy, String optionalAllergy,
                       String temp, String fastBreathing, String vomiting, String convulsions) throws InterruptedException {
         inputPage= new InputPage();
+        outputPage= new OutputPage();
         inputPage.setAge(ageYear,ageMonth);
         Assert.assertEquals(inputPage.getAgeEntered(),ageYear);
         inputPage.setGender(gender);
@@ -87,28 +91,22 @@ public class InputTests extends Base {
         inputPage.setVomiting(vomiting);
         inputPage.setConvulsions(convulsions);
         inputPage.clickCalcBtn();
-        Assert.assertEquals(inputPage.getHeaderTitle(),OUTPUT_HEADER);
-        System.out.println(inputPage.getOutputAge());
-        Assert.assertEquals(inputPage.getGender(),gender);
-//        Assert.assertEquals(inputPage.getWeight(),"13.1");
-        System.out.println(inputPage.getDehydrationStatus());
-        Assert.assertEquals(inputPage.verifyFirstFluidType(inputPage.getDehydrationStatus()),mappings.getFluidType(inputPage.getDehydrationStatus()));
-        System.out.println(inputPage.getFirstFluidVolume());
-        Assert.assertEquals(inputPage.getFirstFluidDuration(),inputPage.verifyFirstFluidTime(inputPage.getDehydrationStatus()));
-        Assert.assertEquals(inputPage.verifySecondFluidType(inputPage.getDehydrationStatus()),mappings.getFluidType(inputPage.getDehydrationStatus()));
-        System.out.println(inputPage.getSecondFluidVolume(inputPage.getDehydrationStatus()));
-        Assert.assertEquals(inputPage.getSecondFluidDuration(inputPage.getDehydrationStatus()),inputPage.getSecondFluidDuration(inputPage.getDehydrationStatus()));
+        Assert.assertEquals(outputPage.getHeaderTitle(),OUTPUT_HEADER);
+        System.out.println(outputPage.getOutputAge());
+        Assert.assertEquals(outputPage.getGender(),gender);
+        System.out.println(inputPage.getWeight());
+        System.out.println(outputPage.getDehydrationStatus());
+        Assert.assertEquals(outputPage.verifyFirstFluidType(outputPage.getDehydrationStatus()),mappings.getFluidType(outputPage.getDehydrationStatus()));
+        System.out.println(outputPage.getFirstFluidVolume());
+        Assert.assertEquals(outputPage.getFirstFluidDuration(),outputPage.verifyFirstFluidTime(outputPage.getDehydrationStatus()));
+        Assert.assertEquals(outputPage.verifySecondFluidType(outputPage.getDehydrationStatus()),mappings.getFluidType(outputPage.getDehydrationStatus()));
+        System.out.println(outputPage.getSecondFluidVolume(outputPage.getDehydrationStatus()));
+        Assert.assertEquals(outputPage.getSecondFluidDuration(outputPage.getDehydrationStatus()),outputPage.getSecondFluidDuration(outputPage.getDehydrationStatus()));
+        Assert.assertTrue(outputPage.verifyTemperature(temp));
+        Assert.assertTrue(outputPage.verifyConvulsions(convulsions));
+        Assert.assertTrue(outputPage.verifyFastBreathing(fastBreathing));
+        Assert.assertTrue(outputPage.verifyBloodinStool(bloodyStool));
     }
-//    @Ignore
-//    public void verifyAntibiotics() throws InterruptedException {
-//        settingsPage= new SettingsPage();
-//        settingsPage.openSideNav();
-//        Thread.sleep(3000);
-//        settingsPage.openSettings();
-//        settingsPage.openAntibiotics();
-//        Assert.assertEquals(settingsPage.getDefaultWateryAntibiotic(), mappings.getWateryAntibiotic(COUNTRY));
-//        Assert.assertEquals(settingsPage.getDefaultBloodyAntibiotic(), mappings.getBloodyAntibiotic(COUNTRY));
-//    }
     @AfterMethod
     public void done(){
         System.out.println("Done");

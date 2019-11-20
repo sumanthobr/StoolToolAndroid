@@ -169,10 +169,8 @@ public class InputPage extends Base {
     }
     public String getAgeEntered(){
         String ageString= ageInput.getText();
-        String ageEntered= ageString.replaceAll("[^0-9.]", "");
-        ageEntered.trim();
-        String ageYear= ageEntered.substring(0,1);
-        return ageYear;
+        String ageYear= ageString.substring(0,ageString.indexOf("y"));
+        return ageYear.trim();
     }
     public void setDateOfBirth(String month,String day,String year){
         ageInput.click();
@@ -261,13 +259,11 @@ public class InputPage extends Base {
         }
     }
     public void setPregnant(String b){
-        if(b.equalsIgnoreCase("yes")){
-            if(Integer.parseInt(getAgeEntered())>11){
-                pregnancyYesBtn.click();
-            }
-            else {
-                pregnancyNoBtn.click();
-            }
+        if(Integer.parseInt(getAgeEntered())>11 && b.equalsIgnoreCase("yes")){
+            pregnancyYesBtn.click();
+        }
+        else if(Integer.parseInt(getAgeEntered())>11 && b.equalsIgnoreCase("no")){
+            pregnancyNoBtn.click();
         }
         else {
             System.out.println("No pregnancy for the given conditions");
@@ -388,9 +384,11 @@ public class InputPage extends Base {
     public boolean verifyAllergyMarked(String marked){
         if(marked.equalsIgnoreCase("yes")){
             scrollAndClick(allergyLayout);
+            System.out.println("Searching for allergy layout");
             return allergyLayout.get(0).isDisplayed();
         }
         else{
+            System.out.println("No medication allergies");
             return true;
         }
     }
@@ -415,15 +413,18 @@ public class InputPage extends Base {
                 case SULFONAMIDES:
                     scrollAndClick(sulfCheckBox);
                     break;
-                case OTHER:
-                   scrollAndClick(otherCheckBox);
-                    break;
                 case TETRACYCLINES:
+                    scrollDown();
                     scrollAndClick(tetraCheckBox);
+                    break;
+                case OTHER:
+                    scrollDown();
+                    scrollAndClick(otherCheckBox);
+                    break;
             }
         }
         else{
-            System.out.println("No Allergies");
+            System.out.println("Not selecting any as allergies is marked NO");
         }
     }
     public boolean isAllergyChecked(String isAllergic, String allergy){

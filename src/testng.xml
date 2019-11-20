@@ -7,7 +7,7 @@
 <!--        <class name="SanityTests.LoginTest"/>-->
 <!--        <class name="SanityTests.LaunchTest"/>-->
 <!--        <class name="SanityTests.OfflineLoginTest"/>-->
-        <class name="SanityTests.InputTests"/>
+        <class name="SanityTests.AddingCalculatorRecords"/>
     </classes>
 </test>
 <!--<test name="Test on Moto C">-->
@@ -21,7 +21,7 @@
 <!--        <parameter name="udid" value="ZY3223QMKH"/>-->
 <!--        <parameter name="systemPort" value="8200"/>-->
 <!--        <classes>-->
-<!--            <class name="SanityTests.InputTests"/>-->
+<!--            <class name="SanityTests.AddingCalculatorRecords"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 </suite>

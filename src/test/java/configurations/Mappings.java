@@ -40,7 +40,7 @@ public class Mappings {
         HashMap<String,String > fl=new HashMap<>();
         fl.put("Severe","type:IV");
         fl.put("Some","type:ORS");
-        fl.put("No","type:None");
+        fl.put("No","type:No Fluids");
         return fl;
     }
     public static String getFluidType(String status){

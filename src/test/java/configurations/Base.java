@@ -113,6 +113,16 @@ public class Base {
         }
         return s;
     }
+    public boolean scrollAndSearch(List<MobileElement> l){
+        boolean b= false;
+        while(l.size()==0){
+            scrollDown();
+        }
+        if(l.size()>0){
+            b=l.get(0).isDisplayed();
+        }
+        return b;
+    }
     public static void loopAndClick(List<MobileElement> mobileElements,String reqString){
         for(MobileElement element:mobileElements){
             if(element.getText().equalsIgnoreCase(reqString)){

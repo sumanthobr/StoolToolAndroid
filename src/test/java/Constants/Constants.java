@@ -53,5 +53,6 @@ public interface Constants {
     String PASSWORD="Test123";
     String PATIENT_LIST_HEADER="Patient List";
     String INPUT_COUNTRY="Haiti";
+    String HYPOTHERMIA="";
 
 }
