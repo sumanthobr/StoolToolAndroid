@@ -2,13 +2,11 @@ package testData;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.testng.annotations.DataProvider;
 
 import java.io.File;
 import java.io.FileInputStream;
 
 public class InputDetails {
-    @DataProvider(name = "details")
     public Object[][] inputTestData() throws Exception {
         String filePath="/Users/saritagidwani/IdeaProjects/AppTest/src/test/java/testData/TestngData.xlsx";
         File file= new File(filePath);

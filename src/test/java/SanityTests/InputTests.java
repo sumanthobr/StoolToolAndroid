@@ -9,7 +9,7 @@ import configurations.CustomTestListener;
 import configurations.Mappings;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import testData.InputDetails;
+import testData.ReadJsonData;
 
 import java.net.MalformedURLException;
 
@@ -52,10 +52,10 @@ public class InputTests extends Base {
         Assert.assertEquals(launchPage.getPopupHeader(),THANK_YOU_HEADER);
         launchPage.proceed();
     }
-    @Test(dataProvider = "details",dataProviderClass = InputDetails.class)
-    public void input(String ageYear,String ageMonth,String gender,String isPregnant,String wateryStool,String bloodyStool,
-                      String generalCondition,String eyes,String thirst,String skinPinch,String isAllergic,String allergy,String optionalAllergy,
-                      String temp,String fastBreathing,String vomiting,String convulsions) throws InterruptedException {
+    @Test(dataProvider = "inputDetails",dataProviderClass = ReadJsonData.class)
+    public void input(String ageYear, String ageMonth, String gender, String isPregnant, String wateryStool, String bloodyStool,
+                      String generalCondition, String eyes, String thirst, String skinPinch, String isAllergic, String allergy, String optionalAllergy,
+                      String temp, String fastBreathing, String vomiting, String convulsions) throws InterruptedException {
         inputPage= new InputPage();
         inputPage.setAge(ageYear,ageMonth);
         Assert.assertEquals(inputPage.getAgeEntered(),ageYear);
@@ -99,20 +99,20 @@ public class InputTests extends Base {
         System.out.println(inputPage.getSecondFluidVolume(inputPage.getDehydrationStatus()));
         Assert.assertEquals(inputPage.getSecondFluidDuration(inputPage.getDehydrationStatus()),inputPage.getSecondFluidDuration(inputPage.getDehydrationStatus()));
     }
-    @Ignore
-    public void verifyAntibiotics() throws InterruptedException {
-        settingsPage= new SettingsPage();
-        settingsPage.openSideNav();
-        Thread.sleep(3000);
-        settingsPage.openSettings();
-        settingsPage.openAntibiotics();
-        Assert.assertEquals(settingsPage.getDefaultWateryAntibiotic(), mappings.getWateryAntibiotic(COUNTRY));
-        Assert.assertEquals(settingsPage.getDefaultBloodyAntibiotic(), mappings.getBloodyAntibiotic(COUNTRY));
-    }
+//    @Ignore
+//    public void verifyAntibiotics() throws InterruptedException {
+//        settingsPage= new SettingsPage();
+//        settingsPage.openSideNav();
+//        Thread.sleep(3000);
+//        settingsPage.openSettings();
+//        settingsPage.openAntibiotics();
+//        Assert.assertEquals(settingsPage.getDefaultWateryAntibiotic(), mappings.getWateryAntibiotic(COUNTRY));
+//        Assert.assertEquals(settingsPage.getDefaultBloodyAntibiotic(), mappings.getBloodyAntibiotic(COUNTRY));
+//    }
     @AfterMethod
     public void done(){
         System.out.println("Done");
-        restart();
+        driver.resetApp();
     }
     @AfterTest
     public void quit(){

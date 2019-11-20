@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="1" ignored="0" total="2" passed="0">
+<testng-results skipped="0" failed="1" ignored="0" total="3" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="332525" started-at="2019-11-15T09:42:24Z" finished-at="2019-11-15T09:47:57Z">
+  <suite name="Suite1" duration-ms="687421" started-at="2019-11-19T13:43:05Z" finished-at="2019-11-19T13:54:32Z">
     <groups>
     </groups>
-    <test name="Test on Android 8.0" duration-ms="332525" started-at="2019-11-15T09:42:24Z" finished-at="2019-11-15T09:47:57Z">
+    <test name="Test on samsung" duration-ms="687421" started-at="2019-11-19T13:43:05Z" finished-at="2019-11-19T13:54:32Z">
       <class name="SanityTests.InputTests">
-        <test-method status="PASS" signature="reportSetup()[pri:0, instance:SanityTests.InputTests@48aaecc3]" name="reportSetup" is-config="true" duration-ms="933" started-at="2019-11-15T09:42:23Z" finished-at="2019-11-15T09:42:24Z">
+        <test-method status="PASS" signature="reportSetup()[pri:0, instance:SanityTests.InputTests@2a5ca609]" name="reportSetup" is-config="true" duration-ms="283" started-at="2019-11-19T13:43:05Z" finished-at="2019-11-19T13:43:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportSetup -->
-        <test-method status="PASS" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:SanityTests.InputTests@48aaecc3]" name="setup" is-config="true" duration-ms="21157" started-at="2019-11-15T09:42:24Z" finished-at="2019-11-15T09:42:45Z">
+        <test-method status="PASS" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:SanityTests.InputTests@2a5ca609]" name="setup" is-config="true" duration-ms="32401" started-at="2019-11-19T13:43:05Z" finished-at="2019-11-19T13:43:37Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[ZY3223QMKH]]>
+                <![CDATA[17119b50]]>
               </value>
             </param>
             <param index="1">
@@ -27,30 +27,129 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="launch()[pri:0, instance:SanityTests.InputTests@48aaecc3]" name="launch" is-config="true" duration-ms="40679" started-at="2019-11-15T09:42:47Z" finished-at="2019-11-15T09:43:28Z">
+        <test-method status="PASS" signature="launch()[pri:0, instance:SanityTests.InputTests@2a5ca609]" name="launch" is-config="true" duration-ms="52314" started-at="2019-11-19T13:43:37Z" finished-at="2019-11-19T13:44:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launch -->
-        <test-method status="FAIL" signature="input(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:SanityTests.InputTests@48aaecc3]" name="input" duration-ms="223730" started-at="2019-11-15T09:43:28Z" data-provider="details" finished-at="2019-11-15T09:47:11Z">
+        <test-method status="PASS" signature="input(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:SanityTests.InputTests@2a5ca609]" name="input" duration-ms="219916" started-at="2019-11-19T13:44:30Z" data-provider="inputDetails" finished-at="2019-11-19T13:48:10Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[2.0]]>
+                <![CDATA[2]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[2.0]]>
+                <![CDATA[2]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[male]]>
+                <![CDATA[Male]]>
               </value>
             </param>
             <param index="3">
               <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
                 <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Well / Alert]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Sunken]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Normal]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Very Slow(> 3 sec)]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[other]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[High]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- input -->
+        <test-method status="PASS" signature="done()[pri:0, instance:SanityTests.InputTests@2a5ca609]" name="done" is-config="true" duration-ms="21275" started-at="2019-11-19T13:48:10Z" finished-at="2019-11-19T13:48:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- done -->
+        <test-method status="PASS" signature="launch()[pri:0, instance:SanityTests.InputTests@2a5ca609]" name="launch" is-config="true" duration-ms="48559" started-at="2019-11-19T13:48:31Z" finished-at="2019-11-19T13:49:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launch -->
+        <test-method status="PASS" signature="input(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:SanityTests.InputTests@2a5ca609]" name="input" duration-ms="206441" started-at="2019-11-19T13:49:19Z" data-provider="inputDetails" finished-at="2019-11-19T13:52:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Female]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[no]]>
               </value>
             </param>
             <param index="4">
@@ -85,6 +184,105 @@
             </param>
             <param index="10">
               <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[amino]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[High]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- input -->
+        <test-method status="PASS" signature="done()[pri:0, instance:SanityTests.InputTests@2a5ca609]" name="done" is-config="true" duration-ms="20920" started-at="2019-11-19T13:52:46Z" finished-at="2019-11-19T13:53:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- done -->
+        <test-method status="PASS" signature="launch()[pri:0, instance:SanityTests.InputTests@2a5ca609]" name="launch" is-config="true" duration-ms="47284" started-at="2019-11-19T13:53:07Z" finished-at="2019-11-19T13:53:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launch -->
+        <test-method status="FAIL" signature="input(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:SanityTests.InputTests@2a5ca609]" name="input" duration-ms="11117" started-at="2019-11-19T13:53:54Z" data-provider="inputDetails" finished-at="2019-11-19T13:54:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Female]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Well / Alert]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Sunken]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Normal]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Very Slow(> 3 sec)]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
                 <![CDATA[no]]>
               </value>
             </param>
@@ -95,12 +293,12 @@
             </param>
             <param index="12">
               <value>
-                <![CDATA[n]]>
+                <![CDATA[no]]>
               </value>
             </param>
             <param index="13">
               <value>
-                <![CDATA[High]]>
+                <![CDATA[Low]]>
               </value>
             </param>
             <param index="14">
@@ -115,16 +313,16 @@
             </param>
             <param index="16">
               <value>
-                <![CDATA[no]]>
+                <![CDATA[yes]]>
               </value>
             </param>
           </params>
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[expected [2.0] but found [2]]]>
+              <![CDATA[expected [12] but found [1]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [2.0] but found [2]
+              <![CDATA[java.lang.AssertionError: expected [12] but found [1]
 at org.testng.Assert.fail(Assert.java:96)
 at org.testng.Assert.failNotEquals(Assert.java:776)
 at org.testng.Assert.assertEqualsImpl(Assert.java:137)
@@ -162,117 +360,19 @@ at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- input -->
-        <test-method status="PASS" signature="done()[pri:0, instance:SanityTests.InputTests@48aaecc3]" name="done" is-config="true" duration-ms="11643" started-at="2019-11-15T09:47:13Z" finished-at="2019-11-15T09:47:25Z">
+        <test-method status="PASS" signature="done()[pri:0, instance:SanityTests.InputTests@2a5ca609]" name="done" is-config="true" duration-ms="20431" started-at="2019-11-19T13:54:06Z" finished-at="2019-11-19T13:54:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- done -->
-        <test-method status="FAIL" signature="launch()[pri:0, instance:SanityTests.InputTests@48aaecc3]" name="launch" is-config="true" duration-ms="31749" started-at="2019-11-15T09:47:25Z" finished-at="2019-11-15T09:47:57Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:96)
-at org.testng.Assert.failNotEquals(Assert.java:776)
-at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-at org.testng.Assert.assertEquals(Assert.java:118)
-at org.testng.Assert.assertEquals(Assert.java:568)
-at org.testng.Assert.assertEquals(Assert.java:578)
-at SanityTests.InputTests.launch(InputTests.java:34)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
-at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:523)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:73)
-at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launch -->
-        <test-method status="SKIP" signature="input(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:SanityTests.InputTests@48aaecc3]" name="input" duration-ms="0" started-at="2019-11-15T09:47:57Z" data-provider="details" finished-at="2019-11-15T09:47:57Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:96)
-at org.testng.Assert.failNotEquals(Assert.java:776)
-at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-at org.testng.Assert.assertEquals(Assert.java:118)
-at org.testng.Assert.assertEquals(Assert.java:568)
-at org.testng.Assert.assertEquals(Assert.java:578)
-at SanityTests.InputTests.launch(InputTests.java:34)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
-at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:523)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:73)
-at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- input -->
-        <test-method status="SKIP" signature="done()[pri:0, instance:SanityTests.InputTests@48aaecc3]" name="done" is-config="true" duration-ms="0" started-at="2019-11-15T09:47:57Z" finished-at="2019-11-15T09:47:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- done -->
-        <test-method status="SKIP" signature="quit()[pri:0, instance:SanityTests.InputTests@48aaecc3]" name="quit" is-config="true" duration-ms="0" started-at="2019-11-15T09:47:57Z" finished-at="2019-11-15T09:47:57Z">
+        <test-method status="PASS" signature="quit()[pri:0, instance:SanityTests.InputTests@2a5ca609]" name="quit" is-config="true" duration-ms="5749" started-at="2019-11-19T13:54:27Z" finished-at="2019-11-19T13:54:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-        <test-method status="SKIP" signature="generateReport()[pri:0, instance:SanityTests.InputTests@48aaecc3]" name="generateReport" is-config="true" duration-ms="0" started-at="2019-11-15T09:48:02Z" finished-at="2019-11-15T09:48:02Z">
+        <test-method status="PASS" signature="generateReport()[pri:0, instance:SanityTests.InputTests@2a5ca609]" name="generateReport" is-config="true" duration-ms="26" started-at="2019-11-19T13:54:37Z" finished-at="2019-11-19T13:54:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateReport -->
       </class> <!-- SanityTests.InputTests -->
-    </test> <!-- Test on Android 8.0 -->
+    </test> <!-- Test on samsung -->
   </suite> <!-- Suite1 -->
 </testng-results>

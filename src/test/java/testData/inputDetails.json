@@ -1,0 +1,62 @@
+{
+  "InputData":[
+    {
+      "ageYear": "2",
+      "ageMonth": "2",
+      "gender": "Male",
+      "isPregnant": "no",
+      "wateryStool": "yes",
+      "bloodyStool": "yes",
+      "generalCondition": "Well / Alert",
+      "eyes": "Sunken",
+      "thirst": "Normal",
+      "skinPinch": "Very Slow(> 3 sec)",
+      "isAllergic": "yes",
+      "allergy": "other",
+      "optionalAllergy": "no",
+      "temp": "High",
+      "fastBreathing": "yes",
+      "vomiting": "yes",
+      "convulsions": "yes"
+    },
+    {
+      "ageYear": "3",
+      "ageMonth": "3",
+      "gender": "Female",
+      "isPregnant": "no",
+      "wateryStool": "yes",
+      "bloodyStool": "no",
+      "generalCondition": "Well / Alert",
+      "eyes": "Sunken",
+      "thirst": "Normal",
+      "skinPinch": "Very Slow(> 3 sec)",
+      "isAllergic": "yes",
+      "allergy": "amino",
+      "optionalAllergy": "no",
+      "temp": "High",
+      "fastBreathing": "no",
+      "vomiting": "yes",
+      "convulsions": "yes"
+    },
+    {
+      "ageYear": "12",
+      "ageMonth": "4",
+      "gender": "Female",
+      "isPregnant": "yes",
+      "wateryStool": "yes",
+      "bloodyStool": "yes",
+      "generalCondition": "Well / Alert",
+      "eyes": "Sunken",
+      "thirst": "Normal",
+      "skinPinch": "Very Slow(> 3 sec)",
+      "isAllergic": "no",
+      "allergy": "no",
+      "optionalAllergy": "no",
+      "temp": "Low",
+      "fastBreathing": "yes",
+      "vomiting": "no",
+      "convulsions": "yes"
+    }
+  ]
+}
+

@@ -156,15 +156,14 @@ public class InputPage extends Base {
     public void setAge(String ageYear,String ageMonth) throws InterruptedException {
         waitFor(ageInput);
         ageInput.click();
-        int age = Math.round(Float.parseFloat(ageYear));
-        String i=  age  + "";
+        int age = Integer.parseInt(ageYear);
         if(age<5){
             ageMonthInput.sendKeys(ageMonth);
         }
         else {
             System.out.println("No Months");
         }
-        ageYearInput.sendKeys(i);
+        ageYearInput.sendKeys(ageYear);
         Thread.sleep(3000);
         doneBtn.click();
     }

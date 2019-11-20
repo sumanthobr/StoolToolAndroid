@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]">
-  <test thread-count="5" name="Test on Android 8.0(failed)">
-    <parameter name="udid" value="ZY3223QMKH"/>
+  <test thread-count="5" name="Test on samsung(failed)">
+    <parameter name="udid" value="17119b50"/>
     <parameter name="systemPort" value="8200"/>
     <classes>
       <class name="SanityTests.InputTests">
@@ -10,12 +10,12 @@
           <include name="quit"/>
           <include name="launch"/>
           <include name="done"/>
-          <include name="input" invocation-numbers="0"/>
+          <include name="input" invocation-numbers="2"/>
           <include name="reportSetup"/>
           <include name="generateReport"/>
           <include name="setup"/>
         </methods>
       </class> <!-- SanityTests.InputTests -->
     </classes>
-  </test> <!-- Test on Android 8.0(failed) -->
+  </test> <!-- Test on samsung(failed) -->
 </suite> <!-- Failed suite [Suite1] -->
