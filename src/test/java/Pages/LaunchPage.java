@@ -83,12 +83,12 @@ public class LaunchPage extends Base {
     }
     public static String getPopupHeader(){
         try{
-            waitFor(popUpHeader);
+            waitFor((MobileElement) popUpHeader);
             return popUpHeader.getText();
         }
         catch (Exception e){
             System.out.println("App is too slow for me");
-            waitFor(popUpHeader);
+            waitFor((MobileElement) popUpHeader);
             return popUpHeader.getText();
         }
 

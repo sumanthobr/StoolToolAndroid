@@ -59,11 +59,13 @@ public class Base {
         caps.setCapability("platformName", "Android");
         caps.setCapability(AndroidMobileCapabilityType.SYSTEM_PORT,systemPort);
         caps.setCapability("simpleIsVisibleCheck","true");
-//        caps.setCapability("automationName","UiAutomator2");
+        caps.setCapability("automationName","UiAutomator2");
         File appDir=new File(APP_PATH);
         File app= new File(appDir,APK);
         caps.setCapability("app",app.getAbsolutePath());
         caps.setCapability("autoGrantPermissions",true);
+        caps.setCapability("unicodeKeyboard", "true");
+        caps.setCapability("resetKeyboard", "true");
         caps.setCapability("appPackage", APP_PACKAGE);
         caps.setCapability("appActivity", APP_ACTIVITY);
         driver= new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
@@ -72,7 +74,7 @@ public class Base {
     public void tearDown(){
         driver.quit();
     }
-    public static void waitFor(WebElement ele){
+    public static void waitFor(MobileElement ele){
         WebDriverWait wait = new WebDriverWait(driver,20);
         wait.until(ExpectedConditions.visibilityOf(ele));
     }
