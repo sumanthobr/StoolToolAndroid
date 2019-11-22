@@ -82,9 +82,18 @@ public class OutputPage extends Base {
         }
         return s;
     }
-    public String getFirstFluidVolume(){
-        waitFor(firstFluidVolume);
-        return firstFluidVolume.getText();
+    public String getFirstFluidVolume(String dehydrationStatus){
+        String s="";
+        switch (dehydrationStatus){
+            case SEVERE:
+            case SOME:
+                s= firstFluidVolume.getText();
+                break;
+            case No:
+                s= "No Fluids";
+                break;
+        }
+        return s;
     }
     public String getSecondFluidVolume(String dehydrationStatus){
         String s="";
@@ -108,18 +117,27 @@ public class OutputPage extends Base {
         }
 
     }
-    public String getFirstFluidDuration(){
-        waitFor(firstFluidDuration);
-        return firstFluidDuration.getText();
+    public String getFirstFluidDuration(String dehydrationStatus){
+        String s="";
+        switch (dehydrationStatus){
+            case SEVERE:
+            case SOME:
+                s= firstFluidDuration.getText();
+                break;
+            case No:
+                s= "No Fluids";
+                break;
+        }
+        return s;
     }
     public String getSecondFluidDuration(String dehydrationStatus){
         String s="";
         switch (dehydrationStatus){
             case SEVERE:
-                s= firstFluidDuration.getText();
+                s= secondFluidDuration .getText();
                 break;
             case SOME:
-                s= "No Second Fluid";
+                s= "No Fluids";
             case No:
                 s= "No Fluids";
         }
@@ -160,13 +178,13 @@ public class OutputPage extends Base {
                 }
                 break;
             case No:
-                s="None";
+                s="No Fluids";
                 break;
         }
         return s;
 
     }
-    public String verifySecondFluidTime(Constants.DehydrationStatus dehydrationStatus){
+    public String verifySecondFluidTime(String dehydrationStatus){
         String s="";
         switch (dehydrationStatus){
             case SEVERE:
@@ -178,15 +196,15 @@ public class OutputPage extends Base {
                 }
                 break;
             case SOME:
-                s="None";
+                s="No Fluids";
                 break;
             case No:
-                s="None";
+                s="No Fluids";
                 break;
         }
         return s;
     }
-    public boolean verifyTemperature(String temp){
+    public boolean verifyTemperatureDangerSign(String temp){
         if(temp.equalsIgnoreCase("high")){
             return scrollAndSearch(feverDangerSign);
         }
@@ -198,7 +216,7 @@ public class OutputPage extends Base {
             return true;
         }
     }
-    public boolean verifyFastBreathing(String fastBreathing){
+    public boolean verifyFastBreathingDangerSign(String fastBreathing){
         if(fastBreathing.equalsIgnoreCase("yes")){
             return scrollAndSearch(fastBreathingDangerSign);
         }
@@ -218,7 +236,7 @@ public class OutputPage extends Base {
         }
 
     }
-    public boolean verifyConvulsions(String convulsions){
+    public boolean verifyConvulsionsDangerSign(String convulsions){
         if(convulsions.equalsIgnoreCase("yes")){
             return scrollAndSearch(convulsionsDangerSign);
         }
@@ -228,9 +246,10 @@ public class OutputPage extends Base {
         }
 
     }
-    public boolean verifyBloodinStool(String bloodyStool){
+    public boolean verifyBloodinStoolDangerSign(String bloodyStool){
         if(bloodyStool.equalsIgnoreCase("yes")){
-            return scrollAndSearch(fastBreathingDangerSign);
+            System.out.println("Bloody Stool is present");
+            return scrollAndSearch(bloodInStoolDangerSign);
         }
         else{
             System.out.println("No bloodyStool");
@@ -238,6 +257,7 @@ public class OutputPage extends Base {
         }
     }
     public String getFirstAntibiotic(){
+        System.out.println("Getting the first antibiotic from the app....");
         return scrollAndGetText(firstAntibiotic);
     }
     public void clickNewPatientButton(){

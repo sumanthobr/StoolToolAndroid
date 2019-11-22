@@ -8,7 +8,7 @@
       <class name="SanityTests.AddingCalculatorRecords">
         <methods>
           <include name="launch"/>
-          <include name="input" invocation-numbers="1"/>
+          <include name="input"/>
           <include name="quit"/>
           <include name="done"/>
           <include name="reportSetup"/>

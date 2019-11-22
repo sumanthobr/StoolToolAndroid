@@ -6,6 +6,6 @@ public interface InputTestConstants {
     String MANUTRITION_ON="Yes: Requires experienced staff";
     String ESTIMATED_TEXT="Estimated";
     String OUTPUT_HEADER="Output";
-    String INPUT_COUNTRY="Bangladesh";
+    String INPUT_COUNTRY="Other";
 
 }

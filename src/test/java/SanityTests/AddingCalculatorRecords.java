@@ -10,6 +10,7 @@ import configurations.CustomTestListener;
 import configurations.Mappings;
 import org.testng.Assert;
 import org.testng.annotations.*;
+import testData.AntibioticPrescriptions;
 import testData.ReadJsonData;
 
 import java.net.MalformedURLException;
@@ -21,6 +22,7 @@ import static Constants.InputTestConstants.INPUT_COUNTRY;
 @Listeners(CustomTestListener.class)
 public class AddingCalculatorRecords extends Base {
     Mappings mappings;
+    AntibioticPrescriptions prescriptions;
     LaunchPage launchPage;
     SettingsPage settingsPage;
     InputPage inputPage;
@@ -61,6 +63,7 @@ public class AddingCalculatorRecords extends Base {
                       String temp, String fastBreathing, String vomiting, String convulsions) throws InterruptedException {
         inputPage= new InputPage();
         outputPage= new OutputPage();
+        prescriptions= new AntibioticPrescriptions();
         inputPage.setAge(ageYear,ageMonth);
         Assert.assertEquals(inputPage.getAgeEntered(),ageYear);
         inputPage.setGender(gender);
@@ -97,16 +100,16 @@ public class AddingCalculatorRecords extends Base {
         System.out.println(inputPage.getWeight());
         String dehydrationStatus=outputPage.getDehydrationStatus();
         Assert.assertEquals(outputPage.verifyFirstFluidType(outputPage.getDehydrationStatus()),mappings.getFluidType(outputPage.getDehydrationStatus()));
-        System.out.println(outputPage.getFirstFluidVolume());
-        Assert.assertEquals(outputPage.getFirstFluidDuration(),outputPage.verifyFirstFluidTime(outputPage.getDehydrationStatus()));
+        System.out.println(outputPage.getFirstFluidVolume(outputPage.getDehydrationStatus()));
+        Assert.assertEquals(outputPage.getFirstFluidDuration(outputPage.getDehydrationStatus()),outputPage.verifyFirstFluidTime(outputPage.getDehydrationStatus()));
         Assert.assertEquals(outputPage.verifySecondFluidType(outputPage.getDehydrationStatus()),mappings.getFluidType(outputPage.getDehydrationStatus()));
         System.out.println(outputPage.getSecondFluidVolume(outputPage.getDehydrationStatus()));
-        Assert.assertEquals(outputPage.getSecondFluidDuration(outputPage.getDehydrationStatus()),outputPage.getSecondFluidDuration(outputPage.getDehydrationStatus()));
-        Assert.assertTrue(outputPage.verifyTemperature(temp));
-        Assert.assertTrue(outputPage.verifyConvulsions(convulsions));
-        Assert.assertTrue(outputPage.verifyFastBreathing(fastBreathing));
-        Assert.assertTrue(outputPage.verifyBloodinStool(bloodyStool));
-        Assert.assertEquals(outputPage.getFirstAntibiotic(),mappings.verifyPrimaryAntibiotic(ageYear,dehydrationStatus,wateryStool,bloodyStool,INPUT_COUNTRY));
+        Assert.assertEquals(outputPage.getSecondFluidDuration(outputPage.getDehydrationStatus()),outputPage.verifySecondFluidTime(outputPage.getDehydrationStatus()));
+        Assert.assertTrue(outputPage.verifyTemperatureDangerSign(temp));
+        Assert.assertTrue(outputPage.verifyConvulsionsDangerSign(convulsions));
+        Assert.assertTrue(outputPage.verifyFastBreathingDangerSign(fastBreathing));
+        Assert.assertTrue(outputPage.verifyBloodinStoolDangerSign(bloodyStool));
+        Assert.assertEquals(outputPage.getFirstAntibiotic(),prescriptions.verifyPrimaryAntibiotic(ageYear,dehydrationStatus,bloodyStool,INPUT_COUNTRY,isPregnant));
     }
     @AfterMethod
     public void done(){
