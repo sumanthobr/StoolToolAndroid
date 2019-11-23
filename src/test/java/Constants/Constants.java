@@ -54,5 +54,12 @@ public interface Constants {
     String PATIENT_LIST_HEADER="Patient List";
     String INPUT_COUNTRY="Haiti";
     String HYPOTHERMIA="";
+    String CEFTRIAXONE="ceftriaxone";
+    String AMOXICILLIN="amoxicillin";
+    String METRONIDAZOLE="metronidazole";
+    String CIPROFLOXACIN="ciprofloxacin";
+    String AZITHROMYCIN="azithromycin";
+    String TETRACYCLINE="paracetamol";
+    String OTHERMED="other_medicine";
 
 }

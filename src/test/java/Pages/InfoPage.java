@@ -35,6 +35,8 @@ public class InfoPage extends Base {
             @AndroidBy(id = "com.stooltool:id/map_district_spinner"),
             @AndroidBy(id = "android:id/text1")
     }) private MobileElement districtSpinner;
+    @AndroidFindBy(id="com.stooltool:id/treatment_location_details_text") private MobileElement treatmentLocationText;
+    @AndroidFindBy(id = "com.stooltool:id/next_illness_history") private MobileElement goToHistoryPAge;
 
     public void setCurrentAdmissionTime(){
         waitFor(admissionTime);
@@ -76,6 +78,13 @@ public class InfoPage extends Base {
         String ageString= ageDialog.getText();
         String ageYear= ageString.substring(0,ageString.indexOf("y"));
         return ageYear.trim();
+    }
+    public String getTreatmentLocation(){
+        return treatmentLocationText.getText();
+    }
+    public void navToHistoryPage(){
+        waitFor(goToHistoryPAge);
+        goToHistoryPAge.click();
     }
 
 

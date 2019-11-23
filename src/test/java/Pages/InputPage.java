@@ -71,10 +71,6 @@ public class InputPage extends Base {
     @AndroidFindBys({
             @AndroidBy(id="com.stooltool:id/input_allergies_known"),
             @AndroidBy(id="com.stooltool:id/radio_layout_btn_yes")
-    }) public MobileElement allergiesYesBtn;
-    @AndroidFindBys({
-            @AndroidBy(id="com.stooltool:id/input_allergies_known"),
-            @AndroidBy(id="com.stooltool:id/radio_layout_btn_yes")
     }) public List<MobileElement> allergiesYesBtns;
     @AndroidFindBys({
             @AndroidBy(id="com.stooltool:id/input_allergies_known"),
